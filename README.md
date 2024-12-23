@@ -1,6 +1,6 @@
 
 
-Please run: 
+Please run the following to get started: 
 
 ```
 git clone https://github.com/rhowardstone/ubiome.git
