@@ -2,6 +2,7 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 import sys
+import numpy as np
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
@@ -21,6 +22,7 @@ if __name__ == "__main__":
     
     # Plot
     plt.figure(figsize=(16, 10))
+    
     #day_order = ["0", "1", "3", "5", "8", "10", "30", "60"]
     #plt.xticks(ticks=range(len(day_order)), labels=day_order)
     
@@ -42,6 +44,9 @@ if __name__ == "__main__":
         legend_handles[label] = line.lines[-1]
 
     ax = plt.gca()
+    plt.ylim(0,1)
+    ax.set_yticks(np.arange(0, 1.2, 0.1))
+    
     # Set y-axis tick labels to bold
     for label in ax.get_yticklabels():
         label.set_fontweight('bold')
@@ -92,4 +97,3 @@ if __name__ == "__main__":
 
     
     
-
