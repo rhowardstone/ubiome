@@ -500,6 +500,24 @@ python3 ../0X_RNA-Seq/PCA/Plot_PCA_wEllipses_byday_wSig.py ../0X_RNA-Seq/PCA/tpm
 
 
 
+echo 'Reviewer-suggested supplemental figure:'
+
+python utils/Calculate_BC_distance_par.py data/Filt_genus.csv data/Filt_genus_BCs.tsv 80 temp  #PCoA generation code already did this work...
+sort -k2,2n data/Filt_genus_BCs.tsv > temp.txt
+mv temp.txt data/Filt_genus_BCs.tsv
+
+python utils/Plot_BC_facetgrid_wBaseline.py data/Filt_genus_BCs.tsv Figs/5A_genus.png
+
+
+
+python utils/Calculate_BC_distance_par.py data/Filt_species.csv data/Filt_species_BCs.tsv 80 temp  #PCoA generation code already did this work...
+sort -k2,2n data/Filt_species_BCs.tsv > temp.txt
+mv temp.txt data/Filt_species_BCs.tsv
+
+python utils/Plot_BC_facetgrid_wBaseline.py data/Filt_species_BCs.tsv Figs/5A_species.png
+
+
+
 
 
 
